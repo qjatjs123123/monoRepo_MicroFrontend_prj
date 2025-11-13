@@ -7,14 +7,21 @@ interface TableProps {
   className?: string;
 }
 
+type AlignType = "left" | "center" | "right";
+
+interface TableCellProps {
+  children: React.ReactNode;
+  align?: AlignType;
+  className?: string;
+}
+
 export function Table({ children, className }: TableProps) {
   return (
     <table
       className={classNames(
-        "min-w-full border border-[var(--color-line-400)] border-collapse",
+        "min-w-full border border-[var(--color-line-400)]  rounded-[8px] border-separate border-spacing-0 overflow-hidden",
         className
       )}
-      style={{ tableLayout: "fixed" }}
     >
       {children}
     </table>
@@ -45,7 +52,11 @@ Table.Row = function TableRow({ children }: { children: React.ReactNode }) {
   );
 };
 
-Table.HeaderRow = function TableHeaderRow({ children }: { children: React.ReactNode }) {
+Table.HeaderRow = function TableHeaderRow({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return <tr className="border-[var(--color-line-400)] border">{children}</tr>;
 };
 
@@ -70,14 +81,6 @@ Table.Head = function TableHead({
     </th>
   );
 };
-
-type AlignType = "left" | "center" | "right";
-
-interface TableCellProps {
-  children: React.ReactNode;
-  align?: AlignType;
-  className?: string;
-}
 
 Table.Cell = function TableCell({
   children,
