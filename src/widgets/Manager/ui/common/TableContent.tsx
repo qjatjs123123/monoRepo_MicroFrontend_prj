@@ -1,14 +1,20 @@
+"use client";
+
 import { FavoriteCompanyCell, FavoriteCompanyList } from "@/entities/Manager";
+import { useCheckContext } from "@/features/Manager/checkFavoriteCompany";
 import CheckBox from "@/shared/ui/CheckBox/CheckBox";
 import { Table } from "@/shared/ui/Table/Table";
 
 export function TableContent({ data }: { data: FavoriteCompanyList }) {
+  const { checkedItem, checkedAll, isAllChecked, isChecked } =
+    useCheckContext();
+
   return (
     <Table>
       <Table.Header>
         <Table.HeaderRow>
           <Table.Head className="px-5">
-            <CheckBox disabled={true} />
+            <CheckBox onChange={checkedAll} checked={isAllChecked} />
           </Table.Head>
           <Table.Head width="70%">기업명</Table.Head>
           <Table.Head width="30%">생성일자</Table.Head>
@@ -19,9 +25,10 @@ export function TableContent({ data }: { data: FavoriteCompanyList }) {
       <Table.Body>
         {data.items.map((item) => (
           <FavoriteCompanyCell
+            onChange={checkedItem}
+            checked={isChecked(item.id)}
             key={item.id}
-            companyName={item.company_name}
-            created_at={item.created_at}
+            item={item}
           />
         ))}
       </Table.Body>

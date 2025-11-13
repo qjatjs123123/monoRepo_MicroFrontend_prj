@@ -13,6 +13,7 @@ interface TableCellProps {
   children: React.ReactNode;
   align?: AlignType;
   className?: string;
+  checked?: boolean;
 }
 
 export function Table({ children, className }: TableProps) {
@@ -44,9 +45,20 @@ Table.Body = function TableBody({ children }: { children: React.ReactNode }) {
   );
 };
 
-Table.Row = function TableRow({ children }: { children: React.ReactNode }) {
+Table.Row = function TableRow({
+  children,
+  checked = false,
+}: {
+  children: React.ReactNode;
+  checked?: boolean;
+}) {
   return (
-    <tr className="hover:bg-gray-50 transition-colors duration-150 border-[var(--color-line-400)] border">
+    <tr
+      className={classNames(
+        "hover:bg-gray-50 transition-colors duration-150 border border-[var(--color-line-400)]",
+        checked && styles.checked
+      )}
+    >
       {children}
     </tr>
   );
