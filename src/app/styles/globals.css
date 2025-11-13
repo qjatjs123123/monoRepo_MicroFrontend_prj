@@ -40,8 +40,8 @@
   --color-label-100: #f9fafb;
   --color-label-200: #f3f4f6;
   --color-label-500: #9ca3af;
-  --color-label-700: #6e747e;
-  --color-label-800: #32373f;
+  --color-label-700: #7F7F82;
+  --color-label-800: #3E3E3E;
   --color-label-900: #0d0e0e;
 
   /* radius */
@@ -49,6 +49,6 @@
   --radius-xl: calc(1rem - 4px);
   --radius-lg: calc(1rem - 6px);
   --radius-md: calc(1rem - 8px);
-  --radius-sm: calc(1rem - 10px);
+  --radius-sm: 4px;
   --radius-xs: calc(1rem - 12px);
 }

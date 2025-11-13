@@ -6,6 +6,7 @@ import CheckBox from "@/shared/ui/CheckBox/CheckBox";
 import { Text } from "@/shared/ui/Text/Text";
 import { FavoriteCompanyCell } from "@/entities/Manager/ui/FavoriteCompanyCell";
 import { FavoriteCompany } from "../src/entities/Manager/model/favorites-list";
+import { TableTitle } from "@/widgets/Manager/ui/TableTitle";
 
 export default async function Home() {
   const favorites = await getFavoritesList({
@@ -17,6 +18,7 @@ export default async function Home() {
     <>
       <Banner title="관심기업 관리 서비스" />
 
+      <TableTitle />
       <Table>
         <Table.Header>
           <Table.HeaderRow>

@@ -34,13 +34,13 @@ export function Button(props: Props) {
         styles[`button--style-${style}`],
         styles[`button--size-${size}`],
         styles[`button--rd`],
-        "font-semibold",
+        "font-medium",
         className
       )}
       disabled={disabled}
       {...rest}
     >
-      <span className="button__content">{children}</span>
+      {children}
     </button>
   );
 }
