@@ -1,8 +1,9 @@
 import { Modal } from "@/shared/ui/Modal/Modal";
-import { ModalBody } from "./common/ModalBody";
-import { ModalHeader } from "./common/ModalHeader";
-import { ModalFooter } from "./common/ModalFooter";
-export function DeleteModal() {
+import { ModalBody } from "./ModalBody";
+import { ModalHeader } from "./ModalHeader";
+import { ModalFooter } from "./ModalFooter";
+export function ModalContainer({ checkedIds }: { checkedIds: number[] }) {
+
   return (
     <Modal>
       <div
@@ -11,7 +12,7 @@ export function DeleteModal() {
         onClick={(e) => e.stopPropagation()}
       >
         <ModalHeader />
-        <ModalBody />
+        <ModalBody count={checkedIds.length}/>
         <ModalFooter />
       </div>
     </Modal>

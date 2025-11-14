@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { Text } from "@/shared/ui/Text/Text";
 
-export function ModalBody() {
+export function ModalBody({ count }: { count: number }) {
   return (
     <>
       <Image src="/close.png" width={80} height={80} alt="close" />
 
       <Text type="title" weight="bold" size="3">
-        총 2개를 삭제하시겠습니까?
+        총 {count}개를 삭제하시겠습니까?
       </Text>
       <div className="flex flex-col">
         <Text
