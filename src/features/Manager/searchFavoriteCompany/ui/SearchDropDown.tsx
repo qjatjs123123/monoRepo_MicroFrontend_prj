@@ -13,6 +13,7 @@ interface SearchDropDownProps {
 
 export function SearchDropDown({ value, onChange }: SearchDropDownProps) {
   const [showList, setShowList] = useState(false);
+  const [isExist, setIsExist] = useState(false); 
 
   return (
     <div className="relative">
@@ -25,13 +26,15 @@ export function SearchDropDown({ value, onChange }: SearchDropDownProps) {
             setShowList(true);
           }}
         />
-        <WrapperIcon isDown={showList} />
+        <WrapperIcon isDown={isExist} />
       </div>
       {showList && (
         <CompanySuggest
           value={value}
           onChange={onChange}
           setShowList={setShowList}
+          isExist={isExist}
+          setIsExist={setIsExist}
         />
       )}
     </div>

@@ -1,21 +1,29 @@
 import { useGetCompanies } from "@/entities/Manager";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { getCompanySuggestions } from "../lib/filter";
 
 interface CompanySuggestProps {
   value: string;
   onChange: (value: string) => void;
   setShowList: (value: boolean) => void;
+  setIsExist:(value: boolean) => void;
+  isExist:boolean
 }
 
 export function CompanySuggest({
   value,
   onChange,
   setShowList,
+  setIsExist,
+  isExist
 }: CompanySuggestProps) {
   const { data } = useGetCompanies();
   const filtered = getCompanySuggestions(value, data.companies);
-  const isExist = filtered.length > 0;
+  
+  useEffect(() => {
+    setIsExist(filtered.length > 0)
+  }, [filtered.length, setIsExist]);
+
 
   return (
     <>
