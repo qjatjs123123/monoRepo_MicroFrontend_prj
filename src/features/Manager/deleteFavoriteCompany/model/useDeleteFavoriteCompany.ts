@@ -4,10 +4,12 @@ import { useToastService } from "@/shared/ui/Toast/model/useToastService";
 import { AxiosError } from "axios";
 import { EMAIL } from "../../../../shared/config/constants/constants";
 import { useOverlay } from "@/shared/model/useOverlay";
+import { useGetFavoriteList } from "@/entities/Manager";
 
 export function useDeleteFavoriteCompany(checkedIds: number[]) {
   const { show } = useToastService();
   const { close } = useOverlay();
+  const { refetch } = useGetFavoriteList();
   
   const mutation = useMutation({
     mutationFn: async () => {
@@ -25,6 +27,7 @@ export function useDeleteFavoriteCompany(checkedIds: number[]) {
     onSuccess: (message) => {
       close();
       show(message);
+      refetch();
     },
     onError: (error: AxiosError) => {
       show(error.message);

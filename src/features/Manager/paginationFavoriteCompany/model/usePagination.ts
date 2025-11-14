@@ -3,12 +3,12 @@
 import { useGetFavoriteList } from "@/entities/Manager";
 
 import { PagiNationProps } from "./pagination";
-import { dotPagination } from '../lib/dotPagination';
+import { dotPagination } from "../lib/dotPagination";
 
 export function usePagination(): PagiNationProps {
   const { data } = useGetFavoriteList();
   const { page, total_pages } = data;
-  const pageArray = dotPagination(page, 55);
+  const pageArray = dotPagination(page, total_pages);
 
-  return { pageArray, currentPage: page, totalPage: 55 };
+  return { pageArray, currentPage: page, totalPage: total_pages };
 }

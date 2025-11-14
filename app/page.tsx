@@ -1,4 +1,4 @@
-import { Page } from "@/pages/Manager";
+import { Page } from "@/page/Manager";
 
 interface SearchParamsProps {
   searchParams: Promise<{
