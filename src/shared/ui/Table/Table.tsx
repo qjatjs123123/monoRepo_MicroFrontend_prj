@@ -55,7 +55,7 @@ Table.Row = function TableRow({
   return (
     <tr
       className={classNames(
-        "hover:bg-gray-50 transition-colors duration-150 border border-[var(--color-line-400)]",
+        "hover:bg-gray-50 transition-colors  border border-[var(--color-line-400)]",
         checked && styles.checked
       )}
     >
