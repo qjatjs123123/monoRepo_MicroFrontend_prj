@@ -17,6 +17,7 @@ export function DetailModalWrapper({
   favoriteId,
 }: DetailModalWrapperProps) {
   const { open } = useOverlay();
+  
   const showDetailModal = () =>
     open(() => (
       <Modal align="right">

@@ -5,7 +5,7 @@ import { Table } from "@/shared/ui/Table/Table";
 import { FavoriteCompany } from "@/entities/Manager";
 import { Button } from "@/shared/ui/Button/Button";
 import { useDeleteFavoriteCompanyOne } from "@/features/Manager/deleteFavoriteCompany";
-import { DetailModalWrapper } from "@/features/Manager/showDetailFavorite";
+import { DetailModalWrapper } from "@/features/Manager/readFavoriteCompany";
 
 interface FavoriteCompanyCellProps {
   item: FavoriteCompany;
