@@ -3,6 +3,8 @@ import { Button } from "@/shared/ui/Button/Button";
 import { EditIcon } from "@/shared/ui/Icon/EditIcon";
 import { Text } from "@/shared/ui/Text/Text";
 import { TextArea } from "@/shared/ui/TextArea/TextArea";
+import { CancelButton } from "./CancelButton";
+import { UpdateButton } from "./UpdateButton";
 
 export function UpdateModal({ favoriteId }: { favoriteId: number }) {
   const { data } = useGetFavoriteDetail(favoriteId);
@@ -20,11 +22,9 @@ export function UpdateModal({ favoriteId }: { favoriteId: number }) {
         />
       </div>
 
-      <div className="flex justify-end p-2 w-full">
-        <Button style="fill" className="flex gap-2">
-          <EditIcon />
-          <Text>수정하기</Text>
-        </Button>
+      <div className="flex justify-end p-2 w-full gap-2">
+        <CancelButton />
+        <UpdateButton />
       </div>
     </>
   );
