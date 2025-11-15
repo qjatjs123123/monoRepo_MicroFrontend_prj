@@ -12,7 +12,7 @@ interface DetailModalWrapperProps {
   favoriteId: number;
 }
 
-export function DetailModalWrapper({
+export function DetailModalEntry({
   children,
   favoriteId,
 }: DetailModalWrapperProps) {

@@ -1,9 +1,9 @@
 import { useToastService } from "@/shared/ui/Toast/model/useToastService";
-import { ModalContainer } from "./common/ModalContainer";
+import { ModalContainer } from "./ModalContainer";
 import { useEffect } from "react";
-import { useCheckContext } from "../../checkFavoriteCompany";
+import { useCheckContext } from "../../../checkFavoriteCompany";
 
-export function DeleteModalEntry() {
+export function ModalEntry() {
   const toast = useToastService();
   const { checkedIds } = useCheckContext();
   const isEntry = checkedIds.length > 0;

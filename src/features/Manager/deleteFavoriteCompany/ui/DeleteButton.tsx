@@ -4,7 +4,7 @@ import { Button } from "@/shared/ui/Button/Button";
 import { TrashIcon } from "@/shared/ui/Icon/TrashIcon";
 import { Text } from "@/shared/ui/Text/Text";
 import { useCheckContext } from "../../checkFavoriteCompany";
-import { DeleteModalEntry } from "./DeleteModalEntry";
+import { ModalEntry } from "./common/ModalEntry";
 import { CheckContext } from "../../checkFavoriteCompany/ui/CheckProvider";
 
 export function DeleteButton() {
@@ -19,7 +19,7 @@ export function DeleteButton() {
       onClick={() =>
         open(() => (
           <CheckContext.Provider value={contextValue}> 
-            <DeleteModalEntry />
+            <ModalEntry />
           </CheckContext.Provider>
         ))
       }

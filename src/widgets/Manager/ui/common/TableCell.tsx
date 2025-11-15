@@ -5,7 +5,7 @@ import { Table } from "@/shared/ui/Table/Table";
 import { FavoriteCompany } from "@/entities/Manager";
 import { Button } from "@/shared/ui/Button/Button";
 import { useDeleteFavoriteCompanyOne } from "@/features/Manager/deleteFavoriteCompany";
-import { DetailModalWrapper } from "@/features/Manager/readFavoriteCompany";
+import { DetailModalEntry } from "@/features/Manager/readFavoriteCompany";
 
 interface FavoriteCompanyCellProps {
   item: FavoriteCompany;
@@ -21,7 +21,7 @@ export const TableCell = React.memo(function TableCell({
   const mutation = useDeleteFavoriteCompanyOne();
 
   return (
-    <DetailModalWrapper favoriteId={item.id}>
+    <DetailModalEntry favoriteId={item.id}>
       {(showDetailModal) => (
         <Table.Row checked={checked} onClick={showDetailModal} >
           <Table.Cell align="center">
@@ -41,6 +41,6 @@ export const TableCell = React.memo(function TableCell({
           </Table.Cell>
         </Table.Row>
       )}
-    </DetailModalWrapper>
+    </DetailModalEntry>
   );
 });

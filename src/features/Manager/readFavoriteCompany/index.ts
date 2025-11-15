@@ -1,1 +1,1 @@
-export { DetailModalWrapper } from "./ui/DetailModalWrapper";
+export { DetailModalEntry } from "./ui/DetailModalEntry";

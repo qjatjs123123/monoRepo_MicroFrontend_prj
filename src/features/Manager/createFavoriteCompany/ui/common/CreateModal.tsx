@@ -3,10 +3,10 @@
 import React from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { Modal } from "@/shared/ui/Modal/Modal";
-import { ModalHeader } from "./common/ModalHeader";
-import { ModalBody } from "./common/ModalBody";
-import { ModalFooter } from "./common/ModalFooter";
-import { FavoriteCompanyFormProps } from "../model/favorite-company-form";
+import { ModalHeader } from "./ModalHeader";
+import { ModalBody } from "./ModalBody";
+import { ModalFooter } from "./ModalFooter";
+import { FavoriteCompanyFormProps } from "../../model/favorite-company-form";
 import { EMAIL } from "@/shared/config/constants/constants";
 
 export function CreateModal() {

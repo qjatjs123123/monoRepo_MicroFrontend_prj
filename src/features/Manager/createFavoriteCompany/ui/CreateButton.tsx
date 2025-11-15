@@ -4,7 +4,7 @@ import { Button } from "@/shared/ui/Button/Button";
 import PlusIcon from "@/shared/ui/Icon/PlusIcon";
 import { Modal } from "@/shared/ui/Modal/Modal";
 import { Text } from "@/shared/ui/Text/Text";
-import { CreateModal } from "./CreateModal";
+import { CreateModal } from "./common/CreateModal";
 
 export function CreateButton() {
   const { open } = useOverlay();
