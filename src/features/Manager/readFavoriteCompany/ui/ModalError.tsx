@@ -10,7 +10,7 @@ interface DetailErrorProps {
   favoriteId: number
 }
 
-export function DetailError({ resetErrorBoundary, favoriteId }: DetailErrorProps) {
+export function ModalError({ resetErrorBoundary, favoriteId }: DetailErrorProps) {
   const queryClient = useQueryClient();
 
   return (

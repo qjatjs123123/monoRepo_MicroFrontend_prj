@@ -1,3 +1,5 @@
+"use client"
+
 import { useOverlay } from "@/shared/model/useOverlay";
 import { Modal } from "@/shared/ui/Modal/Modal";
 import { Suspense } from "react";
