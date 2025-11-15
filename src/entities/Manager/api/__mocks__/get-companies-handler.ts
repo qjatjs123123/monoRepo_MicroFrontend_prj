@@ -107,6 +107,13 @@ export const companiesHandler = [
       "BGF리테일",
     ];
 
+    return HttpResponse.json(
+      {
+        companies,
+      },
+      { status: 400 }
+    );
+
     return HttpResponse.json({
       companies,
     });
