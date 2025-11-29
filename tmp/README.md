@@ -36,7 +36,7 @@ https://pwcprj.netlify.app/
 
 
 ## 백엔드 API 없이 프론트엔드 개발하기
-- Mock
+- MSW
 - API 에러 테스트
 
 
