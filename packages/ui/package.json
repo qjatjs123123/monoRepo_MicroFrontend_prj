@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
-    "@monorepo/tailwind-config": "workspace:*",
-    "vite-plugin-static-copy": "^3.1.4"
+    "@monorepo/tailwind-config": "workspace:*"
+
   },
   "peerDependencies": {
     "react": ">=18.0.0",

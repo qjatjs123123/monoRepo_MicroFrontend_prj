@@ -12,7 +12,7 @@ export default defineConfig({
       name: "mfe_banner",
       filename: "remoteEntry.js",
       exposes: {
-        "./Banner": "./src/Banner.tsx",
+        "./Banner": "./src/Banners.tsx",
       },
       shared: {
         react: { singleton: true, strictVersion: true },
