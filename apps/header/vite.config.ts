@@ -25,9 +25,9 @@ export default defineConfig({
     target: "esnext",
   },
   preview: {
-    port: 5001,
+    port: 5002,
   },
   server: {
-    port: 5001, // dev 서버 포트 설정
+    port: 5002, // dev 서버 포트 설정
   },
 });
