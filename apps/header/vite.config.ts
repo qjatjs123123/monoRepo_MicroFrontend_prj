@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { federation } from "@module-federation/vite";
 
 export default defineConfig({
-  base: "http://localhost:5002/",
+  base: "https://pwc-header.netlify.app/",
   plugins: [
     react(),
     tailwindcss(),

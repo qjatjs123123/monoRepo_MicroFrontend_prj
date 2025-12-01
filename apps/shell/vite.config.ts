@@ -10,11 +10,11 @@ export default defineConfig({
     federation({
       name: "shell",
       remotes: {
-        // mfe_header: {
-        //   type: "module",
-        //   name: "mfe_header",
-        //   entry: "http://localhost:5001/remoteEntry.js",
-        // },
+        mfe_header: {
+          type: "module",
+          name: "mfe_header",
+          entry: "https://pwc-header.netlify.app/remoteEntry.js",
+        },
         mfe_banner: {
           type: "module",
           name: "mfe_banner",
