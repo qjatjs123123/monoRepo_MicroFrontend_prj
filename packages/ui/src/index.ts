@@ -1,4 +1,6 @@
-export { StarIcon } from './Icon/StarIcon';
+export { AnnoyIcon } from "./Icon/AnnoyIcon";
+export { BoxIcon } from "./Icon/BoxIcon";
+export { StarIcon } from "./Icon/StarIcon";
 export { CloseIcon } from "./Icon/CloseIcon";
 export { TrashIcon } from "./Icon/TrashIcon";
 export { PlusIcon } from "./Icon/PlusIcon";
