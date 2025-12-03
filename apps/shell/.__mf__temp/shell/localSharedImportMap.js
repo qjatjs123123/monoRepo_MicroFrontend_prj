@@ -4,6 +4,11 @@
     import {loadShare} from "@module-federation/runtime";
     const importMap = {
       
+        "@monorepo/ui": async () => {
+          let pkg = await import("__mf__virtual/shell__prebuild___mf_0_monorepo_mf_1_ui__prebuild__.js");
+            return pkg;
+        }
+      ,
         "react": async () => {
           let pkg = await import("__mf__virtual/shell__prebuild__react__prebuild__.js");
             return pkg;
@@ -13,10 +18,45 @@
           let pkg = await import("__mf__virtual/shell__prebuild__react_mf_2_dom__prebuild__.js");
             return pkg;
         }
+      ,
+        "react-router-dom": async () => {
+          let pkg = await import("__mf__virtual/shell__prebuild__react_mf_2_router_mf_2_dom__prebuild__.js");
+            return pkg;
+        }
       
     }
       const usedShared = {
       
+          "@monorepo/ui": {
+            name: "@monorepo/ui",
+            version: "1.0.0",
+            scope: ["default"],
+            loaded: false,
+            from: "shell",
+            async get () {
+              if (false) {
+                throw new Error(`Shared module '${"@monorepo/ui"}' must be provided by host`);
+              }
+              usedShared["@monorepo/ui"].loaded = true
+              const {"@monorepo/ui": pkgDynamicImport} = importMap
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^1.0.0",
+              
+            }
+          }
+        ,
           "react": {
             name: "react",
             version: "19.2.0",
@@ -41,7 +81,7 @@
               }
             },
             shareConfig: {
-              singleton: false,
+              singleton: true,
               requiredVersion: "^19.2.0",
               
             }
@@ -71,14 +111,52 @@
               }
             },
             shareConfig: {
-              singleton: false,
+              singleton: true,
               requiredVersion: "^19.2.0",
+              
+            }
+          }
+        ,
+          "react-router-dom": {
+            name: "react-router-dom",
+            version: "7.10.0",
+            scope: ["default"],
+            loaded: false,
+            from: "shell",
+            async get () {
+              if (false) {
+                throw new Error(`Shared module '${"react-router-dom"}' must be provided by host`);
+              }
+              usedShared["react-router-dom"].loaded = true
+              const {"react-router-dom": pkgDynamicImport} = importMap
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "6.16.0",
               
             }
           }
         
     }
       const usedRemotes = [
+                {
+                  entryGlobalName: "mfe_finance",
+                  name: "mfe_finance",
+                  type: "module",
+                  entry: "https://pwc-fin.netlify.app/remoteEntry.js",
+                  shareScope: "default",
+                }
+          
       ]
       export {
         usedShared,
