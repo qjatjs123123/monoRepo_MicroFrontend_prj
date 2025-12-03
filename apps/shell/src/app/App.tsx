@@ -9,7 +9,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <TanStackProvider>
-        {/* <Header /> */}
+        <Header />
         <Banner />
 
         {/* Routes 정의 */}
