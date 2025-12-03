@@ -1,3 +1,4 @@
+export { StarIcon } from './Icon/StarIcon';
 export { CloseIcon } from "./Icon/CloseIcon";
 export { TrashIcon } from "./Icon/TrashIcon";
 export { PlusIcon } from "./Icon/PlusIcon";

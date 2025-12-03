@@ -1,7 +1,7 @@
 import { Layout } from "@monorepo/ui";
-import { ViewerTitle } from "./ViewerTitle";
+import { ViewerTitle } from "./widgets/title/ui/ViewerTitle";
 import "./global.css"
-import { ViewerForm } from "./ViewerForm";
+import { ViewerForm } from "./widgets/form";
 
 function App() {
   return (

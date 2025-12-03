@@ -1,10 +1,6 @@
-import { Button, Input, Text } from "@monorepo/ui";
+import { Button, Input, StarIcon, Text } from "@monorepo/ui";
 import { useState } from "react";
-import {
-  Controller,
-  FormProvider,
-  useForm,
-} from "react-hook-form";
+import { Controller, FormProvider, useForm } from "react-hook-form";
 
 export interface ViewerFormProps {
   corp_code: string; // 8자리
@@ -54,7 +50,8 @@ export function ViewerForm() {
             control={methods.control}
             render={({ field }) => (
               <div className="flex gap-5 items-center">
-                <div className="w-[60px]">
+                <div className="w-[60px] flex justify-between items-center">
+                  <StarIcon />
                   <Text size="3" type="body" weight="bold">
                     기업명
                   </Text>
@@ -149,7 +146,10 @@ export function ViewerForm() {
         </div>
 
         {iframeUrl && (
-          <iframe src={iframeUrl} className="w-full h-[800px] border flex justify-center" />
+          <iframe
+            src={iframeUrl}
+            className="w-full h-[800px] border flex justify-center"
+          />
         )}
       </FormProvider>
     </div>

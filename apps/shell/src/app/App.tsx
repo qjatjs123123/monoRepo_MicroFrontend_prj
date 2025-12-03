@@ -9,8 +9,6 @@ export default function App() {
     <BrowserRouter>
       <TanStackProvider>
         <Header />
-
-        {/* Routes 정의 */}
         <Routes>
           <Route path="/" element={<Finance />} />
           <Route path="/viewer" element={<Viewer />} />
