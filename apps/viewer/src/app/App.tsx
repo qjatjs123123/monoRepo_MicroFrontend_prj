@@ -9,7 +9,7 @@ import { Viewer } from "@/widgets/viewer";
 function App() {
   const methods = useForm<ViewerFormProps>({
     defaultValues: {
-      corp_code: "00126380",
+      corp_code: "",
       bsns_year: "2024",
       reprt_code: "11013",
       fs_div: "CFS",

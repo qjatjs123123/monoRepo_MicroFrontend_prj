@@ -20,3 +20,4 @@ export { Button } from "./Button/Button";
 export { Text } from "./Text/Text";
 export { TextArea } from "./TextArea/TextArea";
 export { Input } from "./Input/Input";
+export { SearchDropDown } from "./SearchDropDown/SearchDropDown";

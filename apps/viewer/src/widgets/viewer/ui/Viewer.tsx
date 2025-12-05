@@ -16,10 +16,10 @@ export function Viewer() {
 }
 
 function Wrapper() {
-  const { data, isError, isLoading } = useGetViewerUrl();
+  const { data, isError, isFetching  } = useGetViewerUrl();
 
   const state = (() => {
-    if (isLoading) return "loading";
+    if (isFetching ) return "loading";
     if (isError) return "error";
     if (data) return "success";
     return "empty";

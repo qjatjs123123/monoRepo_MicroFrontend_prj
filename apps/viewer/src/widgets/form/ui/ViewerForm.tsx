@@ -1,7 +1,8 @@
-import {
-  SubmitButton,
-} from "@/features/submitViewerForm";
+import { DropDown } from "@/features/searchFavoriteCompany";
+import { SubmitButton } from "@/features/submitViewerForm";
 import { FormInput, inputFieldData } from "@/shared/ui";
+import { SearchDropDown } from "@monorepo/ui";
+import { Suspense } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
 export function ViewerForm() {
@@ -19,6 +20,8 @@ export function ViewerForm() {
               field={field}
               title={f.label}
               placeholder={f.placeholder}
+              value={field.value}
+              onChange={field.onChange}
             />
           )}
         />

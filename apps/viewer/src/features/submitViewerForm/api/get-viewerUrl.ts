@@ -4,11 +4,13 @@ import type { ViewerFormProps } from "../model/type";
 import { mapViewerUrl } from "../lib/mapCompanies";
 
 export async function getViewerUrl(params: ViewerFormProps) {
+  console.log(params);
   const response = await api.get<ViewerUrlDTO>(
     "https://pwc-scrap.netlify.app/.netlify/functions/api/scrap",
     {
       params,
     }
   );
+
   return mapViewerUrl(response.data);
 }
