@@ -1,31 +1,14 @@
-import { DropDown } from "@/features/searchFavoriteCompany";
 import { SubmitButton } from "@/features/submitViewerForm";
-import { FormInput, inputFieldData } from "@/shared/ui";
-import { SearchDropDown } from "@monorepo/ui";
-import { Suspense } from "react";
+import { inputFieldData } from "@/shared/ui";
 import { Controller, useFormContext } from "react-hook-form";
+import { CorpCodeInput } from "./common/CorpCodeInput";
+import { BsnsYearInput } from "./common/BsnsYearInput";
 
 export function ViewerForm() {
-  const methods = useFormContext();
-
   return (
     <form className="flex flex-col gap-3">
-      {inputFieldData.map((f) => (
-        <Controller
-          key={f.name}
-          name={f.name}
-          control={methods.control}
-          render={({ field }) => (
-            <FormInput
-              field={field}
-              title={f.label}
-              placeholder={f.placeholder}
-              value={field.value}
-              onChange={field.onChange}
-            />
-          )}
-        />
-      ))}
+      <CorpCodeInput />
+      <BsnsYearInput />
       <SubmitButton />
     </form>
   );

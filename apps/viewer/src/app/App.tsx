@@ -10,7 +10,7 @@ function App() {
   const methods = useForm<ViewerFormProps>({
     defaultValues: {
       corp_code: "",
-      bsns_year: "2024",
+      bsns_year: "",
       reprt_code: "11013",
       fs_div: "CFS",
     },

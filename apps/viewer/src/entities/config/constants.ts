@@ -2,7 +2,6 @@ export interface CorpMap {
   [key: string]: string;
 }
 
-
 export const REPRT_CODE = {
   "1분기보고서": 11013,
   반기보고서: 11012,
