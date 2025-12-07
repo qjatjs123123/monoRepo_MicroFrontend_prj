@@ -3,7 +3,6 @@ import Logo from "@monorepo/ui/public/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import "./global.css";
 import { setTitle } from "@monorepo/core";
-import { useEffect } from "react";
 
 export default function Headers() {
   const { pathname } = useLocation();
@@ -11,9 +10,6 @@ export default function Headers() {
   const handleClick = (title: string) => {
     setTitle(title);
   };
-  useEffect(() => {
-    handleClick("관심기업 관리 서비스");
-  }, []);
 
   return (
     <div className="header:flex header:justify-between header:w-full header:py-5">
