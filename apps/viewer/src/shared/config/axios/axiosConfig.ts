@@ -1,6 +1,6 @@
 import axios, { AxiosError, type AxiosResponse } from "axios";
 
-const api = axios.create({});
+const api = axios.create({ baseURL: "/api" });
 
 // 응답 인터셉터
 api.interceptors.response.use(
