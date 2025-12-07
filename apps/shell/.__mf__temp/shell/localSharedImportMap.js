@@ -9,6 +9,11 @@
             return pkg;
         }
       ,
+        "@tanstack/react-query": async () => {
+          let pkg = await import("__mf__virtual/shell__prebuild___mf_0_tanstack_mf_1_react_mf_2_query__prebuild__.js");
+            return pkg;
+        }
+      ,
         "react": async () => {
           let pkg = await import("__mf__virtual/shell__prebuild__react__prebuild__.js");
             return pkg;
@@ -53,6 +58,36 @@
             shareConfig: {
               singleton: true,
               requiredVersion: "^1.0.0",
+              
+            }
+          }
+        ,
+          "@tanstack/react-query": {
+            name: "@tanstack/react-query",
+            version: "5.90.11",
+            scope: ["default"],
+            loaded: false,
+            from: "shell",
+            async get () {
+              if (false) {
+                throw new Error(`Shared module '${"@tanstack/react-query"}' must be provided by host`);
+              }
+              usedShared["@tanstack/react-query"].loaded = true
+              const {"@tanstack/react-query": pkgDynamicImport} = importMap
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^5.0.0",
               
             }
           }
@@ -150,10 +185,26 @@
     }
       const usedRemotes = [
                 {
+                  entryGlobalName: "mfe_viewer",
+                  name: "mfe_viewer",
+                  type: "module",
+                  entry: "https://pwc-viewer.netlify.app/remoteEntry.js",
+                  shareScope: "default",
+                }
+          ,
+                {
                   entryGlobalName: "mfe_finance",
                   name: "mfe_finance",
                   type: "module",
                   entry: "https://pwc-fin.netlify.app/remoteEntry.js",
+                  shareScope: "default",
+                }
+          ,
+                {
+                  entryGlobalName: "mfe_header",
+                  name: "mfe_header",
+                  type: "module",
+                  entry: "https:/localhost:5002/remoteEntry.js",
                   shareScope: "default",
                 }
           

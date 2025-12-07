@@ -21,10 +21,10 @@ app.use((req, res, next) => {
 });
 const router = express.Router();
 
-// /api/scrap POST 라우트
-router.post("/scrap", async (req, res) => {
+// /api/scrap GET 라우트
+router.get("/scrap", async (req, res) => {
   const { corp_code, bsns_year, reprt_code, fs_div } =
-    req.body as FinancialParams;
+    req.query as unknown as FinancialParams;
 
   try {
     const rcpNo = await getRcpNo({ corp_code, bsns_year, reprt_code, fs_div });

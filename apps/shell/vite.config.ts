@@ -16,6 +16,16 @@ export default defineConfig({
     federation({
       name: "shell",
       remotes: {
+        // mfe_header: {
+        //   type: "module",
+        //   name: "mfe_header",
+        //   entry: "http:/localhost:5003/remoteEntry.js",
+        // },
+        // mfe_banner: {
+        //   type: "module",
+        //   name: "mfe_banner",
+        //   entry: "http:/localhost:5002/remoteEntry.js",
+        // },
         mfe_header: {
           type: "module",
           name: "mfe_header",

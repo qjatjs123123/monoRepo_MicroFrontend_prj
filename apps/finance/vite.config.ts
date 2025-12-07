@@ -25,6 +25,8 @@ export default defineConfig({
         react: { singleton: true, strictVersion: true },
         "react-dom": { singleton: true, strictVersion: true },
         "@monorepo/ui": { singleton: true, strictVersion: false },
+        "@monorepo/core": { singleton: true, strictVersion: false },
+        "@monorepo/tailwind-config": { singleton: true, strictVersion: false },
         "@tanstack/react-query": {
           singleton: true,
           strictVersion: true, // 버전이 다르면 에러 → 권장

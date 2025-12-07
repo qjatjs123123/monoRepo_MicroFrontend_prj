@@ -12,6 +12,7 @@
   "dependencies": {
     "@monorepo/tailwind-config": "workspace:*",
     "@monorepo/ui": "workspace:*",
+    "@monorepo/core": "workspace:*",
     "react-router-dom": "^7.10.0"
   },
   "devDependencies": {

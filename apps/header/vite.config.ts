@@ -5,6 +5,7 @@ import { federation } from "@module-federation/vite";
 
 export default defineConfig({
   base: "https://pwc-header.netlify.app/",
+  // base:"https://localhost:5003/",
   plugins: [
     react(),
     tailwindcss(),
@@ -18,6 +19,8 @@ export default defineConfig({
         react: { singleton: true, strictVersion: true },
         "react-dom": { singleton: true, strictVersion: true },
         "@monorepo/ui": { singleton: true, strictVersion: false },
+        "@monorepo/core": { singleton: true, strictVersion: false },
+        "@monorepo/tailwind-config": { singleton: true, strictVersion: false },
         "react-router-dom": { singleton: true, requiredVersion: "6.16.0" },
       },
     }),
@@ -26,9 +29,9 @@ export default defineConfig({
     target: "esnext",
   },
   preview: {
-    port: 5002,
+    port: 5003,
   },
   server: {
-    port: 5002, // dev 서버 포트 설정
+    port: 5003, // dev 서버 포트 설정
   },
 });

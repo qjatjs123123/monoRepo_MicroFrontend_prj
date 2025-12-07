@@ -1,12 +1,22 @@
 import { Text } from "@monorepo/ui";
-import Banner  from "@monorepo/ui/public/banner.png"
+import Banner from "@monorepo/ui/public/banner.png";
 import "./global.css";
+import { useEffect, useState } from "react";
+import { subscribeTitle } from "@monorepo/core";
+// interface BannerProps {
+//   title1: string;
+// }
 
-interface BannerProps {
-  title: string;
-}
+export default function Banners() {
+  const [title, setTitle] = useState("");
 
-export default function Banners({ title }: BannerProps) {
+  useEffect(() => {
+    const unsubscribe = subscribeTitle((newTitle) => {
+      setTitle(newTitle); 
+    });
+    return () => unsubscribe();
+  }, []);
+  
   return (
     <div className="banner:relative banner:w-full banner:h-[25vh]">
       <img
