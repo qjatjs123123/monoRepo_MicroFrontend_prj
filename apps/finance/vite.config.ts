@@ -5,7 +5,7 @@ import { federation } from "@module-federation/vite";
 import path from "path";
 
 export default defineConfig({
-  base: "https://pwc-fin.netlify.app/",
+  base: "https://d2khml1veaagc6.cloudfront.net/pwc/finance/",
   // base: "http://localhost:3000/",
   resolve: {
     alias: {

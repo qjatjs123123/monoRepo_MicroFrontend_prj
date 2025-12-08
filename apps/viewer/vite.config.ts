@@ -6,7 +6,7 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "https://pwc-viewer.netlify.app/",
+  base: "https://d2khml1veaagc6.cloudfront.net/pwc/viewer/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
