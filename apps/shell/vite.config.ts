@@ -34,7 +34,7 @@ export default defineConfig({
         mfe_banner: {
           type: "module",
           name: "mfe_banner",
-          entry: "https://pwc-banner.netlify.app/remoteEntry.js",
+          entry: "https://d2khml1veaagc6.cloudfront.net/pwc/banner/remoteEntry.js",
         },
         mfe_finance: {
           type: "module",
