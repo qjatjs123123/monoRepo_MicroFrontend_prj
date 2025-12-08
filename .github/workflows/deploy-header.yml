@@ -33,3 +33,28 @@ jobs:
       # 5. header 앱 빌드
       - name: Build Header App
         run: pnpm --filter apps/header run build
+
+      # 6. S3 업로드
+      - name: Upload Header App to S3
+        run: |
+          aws s3 sync apps/header/dist s3://hongboemsunimage/pwc \
+            --delete \
+            --acl public-read \
+            --cache-control "max-age=31536000"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+
+      # 7. CloudFront 캐시 무효화
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id $CLOUDFRONT_DIST_ID \
+            --paths "/*"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          CLOUDFRONT_DIST_ID: ${{ secrets.CLOUDFRONT_DIST_ID }}
