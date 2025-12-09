@@ -1,18 +1,100 @@
-## 모놀로식
-- 패키지 : `apps/trash` https://pwcprj.netlify.app/
+## 프로젝트 개요
+- `모놀로식 프로젝트`에서 `모노레포, 마이크로 프론트엔드 전환 프로젝트` 입니다.
 
-## 모노레포 && 마이크로 프론트엔드
-### remote
-- 패키지 : `apps/banner` https://pwc-banner.netlify.app/ (흰 화면)
+<br />
 
-- 패키지 : `apps/header` https://pwc-header.netlify.app/ (흰 화면)
+## 프로젝트 신경 쓴 부분
+- `협업하기 좋은 코드 구조`는 무엇인가?
+- 프론트엔드에서 좋은 `아키텍처`
 
-- 패키지 : `apps/finance` [https://pwc-header.netlify.app/](https://pwc-fin.netlify.app/) (흰 화면)
+<br />
 
-- 패키지 : `apps/view` https://pwc-viewer.netlify.app/ (흰 화면)
+## 아키텍처
+<img width="1101" height="841" alt="Image" src="https://github.com/user-attachments/assets/9e526494-96c5-46ac-8ef9-4ca5843239de" />
 
-### host
+<br />
+
+## 프로젝트 설명
+- `Shell` 레포지토리
+  -  `마이크로 앱` 들을 합치는 `host 앱`
+  -  `netlify`로 무중단 배포 및 호스팅
+  -  `런타임`에 `마이크로 앱` 합침
+  -  `코드 스플리팅` 으로 인한 JS 번들 사이즈 감소
+ 
+- `packages/*` 레포지토리
+  -   각 마이크로 레포지토리들이 공통적으로 사용할 패키지
+  -   `디자인 시스템`
+  -   공통 설정(config), 공용 훅, 유틸리티 함수 등 포함
+  -   일관적인 UI 제공
+  -   코드 중복 제거
+  -   각 레포지토리에서는 해당 공통 패키지를 pnpm workspace를 통해 참조하여 사용
+
+- `마이크로 앱` 간 통신
+  - 이벤트 버스(Event Bus) 패턴
+  - 중앙 EventBus 인스턴스를 정의하여 공용 이벤트 채널로 사용
+  - Pub/Sub 기능
+
+- `디자인 시스템`
+  - `Figma`를 활용한 디자인 문서화
+  - `디자인 토큰` 정의
+  - `emotion/react` 및 `module.css`를 활용
+  - 아토믹 디자인 패턴 확장
+ 
+- 각 레포지토리 `디자인 시스템`
+  - Tailwind 기반의 스타일 시스템 구축
+  - prefix를 활용한 스타일 중복 제거
+ 
+- `마이크로 앱`
+  - Vite Module Federation 기반의 마이크로 프론트엔드 구조
+  - 개발 · 배포 · 테스트의 완전한 독립성 확보
+  - 모노레포 기반의 공통 패키지 활용
+
+- `Feature Sliced Design` 그리고 `Layered(계층화)` 도입
+  - 마이크로 앱 레포지토리에서는 `FSD` 폴더 구조 채택
+  - 기능 기반 개발
+  - 충돌 개선
+  - 효율적인 협업
+  - FSD 폴더 안 세부적인 개발 시 `Layered`를 나누어 개발
+  - 응집성 및 유지보수성 향상
+
+
+- `Gituh Action`
+  - 무중단 배포
+  - 각 레포지토리 독립적 빌드 및 배포
+  - CDN을 활용한 성능 개선
+  - 효율적인 개발
+  - 에러 발생 시 에러 전파 없음
+
+<br />
+
+
+## 결론
+- 대규모 프로젝트 개발 시 효율적인 협업이 필요하다
+  - 도메인 별로 스쿼드를 나누자.
+  - 스쿼드 별로 독립적인 레포지토리에 개발, 테스트, 빌드, 배포해야 한다.
+  - 스쿼드 내에서 더 효율적인 개발론이 필요하기에 기능 단위 개발(Featured-sliced-design)을 도입하자.
+ 
+- 각 개별적인 레포지토리 작업 시 공통 코드 및 디자인을 정의할 필요가 있다.
+  - 모노레포 기반으로 개발하자.
+  - 각 레포지토리에서 공통 패키지를 설치하여 사용하자
+  - 디자인 시스템을 도입하자 (feat: 아토믹 패턴 with figma)
+ 
+- 독립적인 빌드 및 배포, 성능 최적화가 필요하다.
+  - github action을 사용하여 각 스쿼드가 담당한 레포지토리만 테스트 및 빌드 배포한다.
+  - workflow에서 S3의 업로드 및 Cloudfront 캐시 무효화 로직을 작성한다.
+  - 캐시 충돌 없이 CDN으로 성능을 향상할 수 있다.
+
+<br />
+
+> 모노레포, 마이크로 프론트엔드, FSD, 아토믹 디자인을 도입하자
+
+
+<br />
+
+
+## 배포
 - 패키지 : `apps/shell` [https://pwc-shell.netlify.app/](https://pwc-shell.netlify.app/) (화면 ok)
+- 백엔드 배포 x
 
 ### scrap-server
 - 패키지 : `scrap-server`
