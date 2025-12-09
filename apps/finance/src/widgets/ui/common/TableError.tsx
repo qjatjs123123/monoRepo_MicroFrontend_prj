@@ -2,6 +2,7 @@ import { Button } from "@monorepo/ui";
 import { ErrorMessage } from "@monorepo/ui";
 import { Text } from "@monorepo/ui";
 import { useQueryClient } from "@tanstack/react-query";
+import SHEET from "@monorepo/ui/public/sheet.png";
 
 interface FavoriteListErrorProps {
   resetErrorBoundary: (...args: Array<unknown>) => void; 
@@ -13,7 +14,7 @@ export function TableError({ resetErrorBoundary, page }: FavoriteListErrorProps)
 
   return (
     <ErrorMessage
-      src="/empty-2-spot-apng.png"
+      src={SHEET}
       title="다시 시도해주세요"
       description={
         <div className="flex flex-col">
